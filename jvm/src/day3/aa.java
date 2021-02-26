@@ -55,15 +55,9 @@ public class aa {
           throw new ClassNotFoundException(name);
         }
       }
-
-      @Override
-      protected Class<?> findClass(String name) throws ClassNotFoundException {
-        return super.findClass(name);
-      }
     };
     Object obj = myLoader.loadClass("day3.ExtendTestClass").newInstance();
 
-    Method[] methods = obj.getClass().getDeclaredMethods();
     System.out.println(obj.getClass().getClassLoader());
     System.out.println(obj instanceof day3.ExtendTestClass);
   }
